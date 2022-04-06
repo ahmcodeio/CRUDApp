@@ -4,7 +4,6 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Livewire\Crud\IndexComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Crud\EditStudentComponent;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +35,3 @@ Route::get('/editstudents/{id}', [StudentsController::class, 'editstudents'])->n
 // Route for delete
 Route::get('/delete/{id}', [StudentsController::class, 'delete'])->name('delete');
 
-//auth add new  hardcode
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

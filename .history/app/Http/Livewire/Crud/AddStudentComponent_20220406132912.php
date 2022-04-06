@@ -16,7 +16,7 @@ class AddStudentComponent extends Component
     use WithFileUploads;
 
 
-    public $student_id, $name, $email, $phone, $birth, $image, $user_id ;
+    public $student_id, $name, $email, $phone, $birth, $image ;
 
     
 
@@ -93,7 +93,7 @@ class AddStudentComponent extends Component
 
        
 
-        $user_id = Auth::user()->id;
+       
 
         $student = new Student();
 
@@ -109,7 +109,7 @@ class AddStudentComponent extends Component
         // if(!empty($this->image)){
         //     $this->image->store('public/image');
 
-        $student->user_id = $user_id;
+
         //
 
         $student->image = $this->image->store('image');
