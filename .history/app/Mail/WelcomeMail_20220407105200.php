@@ -31,7 +31,7 @@ class WelcomeMail extends Mailable
     {
         $this->data = $students;
 
-        // $image = $this->data->image;
+        $image = $this->data->image;
         
         // border you modive about base64
         

@@ -2,7 +2,6 @@
 
 namespace App\Mail;
 
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class WelcomeMail extends Mailable
 {
-    // public $user, $image;
-
-  
-
-
-    public $data, $user_id, $user, $students;
-
     
+
+    public $data, $user_id;
+
 
     use Queueable, SerializesModels;
 
@@ -31,21 +26,10 @@ class WelcomeMail extends Mailable
     {
         $this->data = $students;
 
-        // $image = $this->data->image;
-        
-        // border you modive about base64
-        
-
-
-        // $user_id = User::user()->id;
-
-        // $user = User::find(1);
-
-        // return 'data:imgae/png;base64' . base64_encode(file_get_contents($students));
 
         // ( base64_encode(asset('storage/' . $students->image)));
 
-        // return 'data:imgae/png;base64' . base64_encode(file_get_contents($this->data));
+        return 'data:imgae/png;base64' . base64_encode(file_get_contents($this->data));
 
         // dd(file_get_contents($this->image));
 
@@ -58,18 +42,11 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
-        // $user = User::find(1);
-
-        // $image = $user->image;
 
         // return $this->markdown('view-to-mail');
-        // dd($this->data);
 
         return $this->markdown('emails.welcome')->with('students', $this->data);
-        // return 'data:imgae/png;base64' . base64_encode(file_get_contents($students));
 
         // return $this->view('emails.welcome')->with('students', $this->data);
-
-
     }
 }

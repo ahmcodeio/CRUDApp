@@ -358,17 +358,9 @@ a[x-apple-data-detectors] {
          </tr> 
        </table> 
        
-
-       
-       @component('mail::message')
-       
-       {{-- <dd>{{ $data }}</dd> --}}
-       {{-- <img src="{{ $students->image }}" alt=""> --}}
+       @component('mail::button', ['url' => $url, 'color' => 'green'])
 View Invoice
-{{-- --<img width="50" src="data:image/png;base64,{{base64_encode(asset('storage/' . $students->image)) }}" alt="">- --}}
 @endcomponent
-
-
 
    </table> 
   </div>  

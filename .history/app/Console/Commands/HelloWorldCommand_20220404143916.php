@@ -46,6 +46,8 @@ class HelloWorldCommand extends Command
      */
 
 
+    // $userid = [];
+    // array_push($userid, $user);
 
     public function handle()
     {
@@ -55,6 +57,8 @@ class HelloWorldCommand extends Command
         info('mail second');
         $student = Student::whereMonth('birth', date('m-d'))
                             ->whereDay('birth', date('d') )
+                            // ->GROUPBY('user_id')
+                            
                             ->get();
 
 
@@ -72,11 +76,34 @@ class HelloWorldCommand extends Command
         Mail::to($user)->send(new WelcomeMail($mystudent));
 
         }
+//
 
-        
+// $users = User::wherehas('students', function($studentQuery) {
+//     $studentQuery
+
+   
+//         ->whereMonth('birth', date('m-d'))
+//         ->whereDay('birth', date('d'));
+//         // ->get();
+//         // dd($studentQuery);
+// })
+//     ->with('students')
+//     ->get();
+
+//     // dd($users);
+//     foreach ($users as $user) {
+//         Mail::to($user)->send(new WelcomeMail($user->students));
+//     }
+
+    
+
+
+//
+        // dd($userid);
+
 
         echo "check email";
 
-
+       
     } 
 }

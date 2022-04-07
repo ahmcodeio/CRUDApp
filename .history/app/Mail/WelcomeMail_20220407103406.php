@@ -31,7 +31,7 @@ class WelcomeMail extends Mailable
     {
         $this->data = $students;
 
-        // $image = $this->data->image;
+        $image = $this->data->image;
         
         // border you modive about base64
         
@@ -65,10 +65,10 @@ class WelcomeMail extends Mailable
         // return $this->markdown('view-to-mail');
         // dd($this->data);
 
-        return $this->markdown('emails.welcome')->with('students', $this->data);
+        // return $this->markdown('emails.welcome')->with('students', $this->data);
         // return 'data:imgae/png;base64' . base64_encode(file_get_contents($students));
 
-        // return $this->view('emails.welcome')->with('students', $this->data);
+        return $this->view('emails.welcome')->with('students', $this->data);
 
 
     }

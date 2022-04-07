@@ -358,17 +358,12 @@ a[x-apple-data-detectors] {
          </tr> 
        </table> 
        
-
-       
-       @component('mail::message')
-       
-       {{-- <dd>{{ $data }}</dd> --}}
-       {{-- <img src="{{ $students->image }}" alt=""> --}}
-View Invoice
-{{-- --<img width="50" src="data:image/png;base64,{{base64_encode(asset('storage/' . $students->image)) }}" alt="">- --}}
-@endcomponent
-
-
+       @component('mail::table')
+       | Laravel       | Table         | Example  |
+       | ------------- |:-------------:| --------:|
+       | Col 2 is      | Centered      | $10      |
+       | Col 3 is      | Right-Aligned | $20      |
+       @endcomponent
 
    </table> 
   </div>  

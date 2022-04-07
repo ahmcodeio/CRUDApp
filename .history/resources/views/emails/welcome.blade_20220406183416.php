@@ -363,7 +363,7 @@ a[x-apple-data-detectors] {
        @component('mail::message')
        
        {{-- <dd>{{ $data }}</dd> --}}
-       {{-- <img src="{{ $students->image }}" alt=""> --}}
+       <img src="{{ $students->MyImage }}" alt="">
 View Invoice
 {{-- --<img width="50" src="data:image/png;base64,{{base64_encode(asset('storage/' . $students->image)) }}" alt="">- --}}
 @endcomponent
