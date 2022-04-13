@@ -28,13 +28,11 @@ class Student extends Model
 
     
 
-    // public function getimageAttribute($students)
-    
-    // {
-    //     // dd($students);
-    //     // return 'data:imgae/png;base64' . base64_encode(file_get_contents($students));
-    //     // return ucfirst($students);
-    // }
+    public function getImageBase64Attribute()
+    {
+        return 'data:image/png;base64,' . base64_encode(file_get_contents(public_path('storage/' . $this->image)));
+        // return ucfirst($students);
+    }
 
 }
 
